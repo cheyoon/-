@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -31,5 +32,7 @@ async def on_message(message):
         file = open("문의.txt", "r")
         c = file.read()
         await message.channel.send(c)
-
-client.run('NTgxMTMwNjQ4OTc5MjQzMDI5.XOdpNg.NY_zsphz26B6o0ZTjSTqAXWalfE')
+        
+        
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
